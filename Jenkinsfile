@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'Node24' // Must match the exact Name configured in Manage Jenkins > Tools
+    }
     options {
         timeout(time: 10, unit: 'MINUTES')
     }
