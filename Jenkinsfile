@@ -12,11 +12,14 @@ pipeline {
                 echo "Checkout stage"
             }
         }
-        stage('Build') {
-            steps {
-                sh 'npm install'
-                sh 'npm run build'
-            }
+stage('Build') {
+    steps {
+        nodejs('Node24') {
+            sh 'npm install'
+            sh 'npm run build'
+        }
+    }
+}
         }
         stage('Test') {
             steps {
