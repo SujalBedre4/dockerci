@@ -20,7 +20,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ubuntu
           key: ${{ secrets.SSH_KEY }}
-          scripts:
+          script:
             cd /home/ubuntu/dockerci
             git pull
             docker compose up -d --build
